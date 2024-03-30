@@ -1,13 +1,19 @@
 {
   "name": "devfile-stack-nodejs-angular",
   "version": "0.0.0",
+  "main": "app.js",
   "scripts": {
+    "openshift": "nodeshift --expose --dockerImage=registry.access.redhat.com/rhscl/ubi8/nodejs-12",
+    "start": "node app.js",
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+    "files": [
+    "package.json",
+    "app.js"
+  ]
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.0",
@@ -18,7 +24,6 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "nodeshift": "^11.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -34,6 +39,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "nodeshift": "^11.0.0",
     "typescript": "~4.7.2"
   }
 }
